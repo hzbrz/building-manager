@@ -6,11 +6,12 @@ function formatDescription(description: string): string {
 
 interface ProjectCardProps {
   project: Project;
+  onEdit: (project: Project) => void;
 }
 
-export const ProjectCard = ({ project }: ProjectCardProps) => {
+export const ProjectCard = ({ project, onEdit }: ProjectCardProps) => {
   const handleEditClick = (projectBeingEdited: Project) => {
-    console.log("edit project", projectBeingEdited);
+    onEdit(projectBeingEdited);
   };
 
   return (
